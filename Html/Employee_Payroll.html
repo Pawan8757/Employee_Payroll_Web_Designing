@@ -5,17 +5,24 @@
         <link rel="stylesheet" href="../Css/EmployeePayrollstylesheet.css">
        
     </head>
-   <body>
-       <header class="header-content header">
-           <div class="logo-content">
-               <img src="../Assests/logo.png" alt="image" style="width:56px">
-              
-               <div>
-                   <span class="emp-text"> Employee</span><br>
-                   <span class="emp-text emp-payroll">PAYROLL</span>
-
-               </div>
-           </div>
+    <body>
+        <header class="header-content header">
+            <div class="logo-content">
+                <img src="../Assests/logo.png" alt="png" width="5%">
+            <div>
+                <span class="emp-text">Employee</span><br>
+                <span class="emp-text emp-payroll">Payroll</span>
+            </div>
+            </div>
         </header>
-</body>
+        <div class="form-content">
+            <form class="form" action="#" onsubmit="save();return false">
+            <div class="form-head">Employee Payroll form</div>
+            <div class="row-content">
+                <label class="label text" for="name">Name</label>
+                <input class="name" placeholder="Your name" required="name">
+            </div>
+            </form>
+        </div>
+    </body>
 </html>
