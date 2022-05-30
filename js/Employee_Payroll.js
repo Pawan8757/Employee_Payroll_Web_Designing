@@ -80,3 +80,38 @@ class EmployeePayrollData{
        }); 
     });
     
+    const save = () =>{
+        try{
+            let employeePayRollData=createEmployeePayroll();
+        } catch (e){
+            return;
+        }
+    }
+    
+    const createEmployeePayroll=()=>{
+        let employeePayRollData=new EmployeePayrollData();
+        try{
+            employeePayRollData.name=getInputValueById('#name');
+        }catch(e){
+            setTextValue('.text-error',e);
+            throw e;
+        }
+    employeePayRollData.profilePic=getSelectedValue('[name=profile]').pop();
+    employeePayRollData.gender=getSelectedValue('[name=gender]').pop();
+    employeePayRollData.department=getSelectedValue('[name=department]').pop();
+    employeePayRollData.salary=getInputValueById('#salary');
+    employeePayRollData.note=getInputValueById('#note');
+    let date=getInputValueById('#day')+" "+getInputValueById('#month')+" "+getInputValueById('#year');
+    employeePayRollData.date=date.parse(date);
+    alert(employeePayRollData.toString());
+    return employeePayRollData;        
+    }
+
+    const getSelectedValue=(propertyValue) =>{
+        let allItems=document.querySelectorAll(propertyValue);
+        let selItems=[];
+        allItems.forEach(Items => {
+            if(item.checked) selItems.push(item.value);
+        });
+        return selItems;
+    }
